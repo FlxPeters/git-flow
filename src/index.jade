@@ -1,0 +1,152 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        title Git-Flow
+
+        link(rel='stylesheet', type='text/css', href='build/build.css')
+
+    body
+
+        a(href='http://www.develop4edu.de/')
+            img(style='position: absolute; top: 25px; right: 25px; border: 0; width: 50px; background: #fff; padding: 5px;', src='/images/logo_100.png')
+
+        article
+
+            section
+                h4 Your flight captain for the next couple of minutes:
+                h2 Felix Peters
+                p.center Application Developer<br> @develop4edu GmbH Stuttgart
+                    img.d4e-logo(src='http://d4e.io/D4E-Logo-Symbol-rand_schriftzug200x200.jpg' height='50')
+
+                p
+                    small
+                        a(href='https://www.atlassian.com/git/tutorials/comparing-workflows') Images by Attlasian - Comparing Workflows
+
+            section
+                h1 Why Git-Flow?
+                img(src='/images/branches.jpg')
+
+            section
+                h2  Centralized Workflow
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/11.svg')
+                p Replacement for traditional SVN Worklows
+
+            section
+                h2 Feature Branch Workflow
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/feature-branch-workflow/01.svg')
+                p All feature development should take place in a dedicated branch instead of the master branch.
+
+            section
+                h2 Conclusion
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/feature-branch-workflow/07.svg')
+                p By isolating features into separate branches, everybody can work independently, yet it’s still trivial to share changes with other developers when necessary.
+
+            section
+                h1 Git-Flow
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/01.svg')
+                p
+                    a(href='http://nvie.com/posts/a-successful-git-branching-model/') by Vincent Driessen at nvie
+
+            section
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/01.svg')
+                ul
+                    li Defines a strict branching model designed around the project release
+                    li Provides a robust framework for managing larger projects.
+                    li Assigns very specific roles to different branches and defines how and when they should interact.
+
+            section
+                h2 How It Works
+                p Gitflow Workflow uses a central repository with historical Branches
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/02.svg')
+
+            section
+                h2 Master Branch
+                p The master branch stores the official release history
+                p It's convenient to tag all commits in the master branch with a version number
+                b The Master Branch is the untouchable sanctuary! Do not touch it!!!
+                img(src='http://www.funnysigns.net/files/please-keep-off-grass-400x268.jpg')
+
+
+            section
+                h2 Develop Branch
+                p The develop branch serves as an integration branch for features
+                p Only simple tasks happen here like fixing a typo etc.
+
+            section
+                h2 Feature Branches
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/03.svg')
+
+            section
+                h2 Feature Branches
+                p Each new feature should reside in its own branch
+                p Feature Branches use #[strong develop] as their parent branch.
+                p When a feature is complete, it gets merged back into develop.
+                h4 Features should never interact directly with master!
+
+            section
+                h2 Release Branches
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/04.svg')
+
+            section
+                h2 Release Branches
+                p Fork a release branch off of develop
+                p Creating this branch starts the next release cycle
+                p
+                    strong No new features can be added after this point—only bug fixes!
+
+                p Once it's ready to ship, the release gets merged into master
+                p Then, it should be merged back into develop
+
+            section
+                h2 Maintenance Branches
+                img(src='https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/05.svg')
+
+            section
+                h2 Maintenance Branches
+                p Maintenance or “hotfix” branches are used to quickly patch production releases
+                p
+                    strong Only branch that should fork directly off of master!
+                p As soon as the fix is complete, it should be merged into both master and develop
+                p (or the current release branch)
+                p Hotfix-Branches are tiny Releases and they are tagged with a version number
+
+            section
+                h2 Tools
+                p gitflow - base tool for Git Flow Workflow
+                a(href='https://github.com/nvie/gitflow') https://github.com/nvie/gitflow
+
+                p git-up - Update all your branches in one step
+                a(href='https://github.com/aanand/git-up') https://github.com/aanand/git-up
+
+                p JIRA - Supports Feature Branches with Stash
+
+            section
+                h1 Demo-Time!
+                img(src='https://wichteldesign.github.io/vagrant-dev-enviroments-made-easy/img/tumblr_inline_n1h1w9xP6K1raprkq.gif')
+
+            section
+                h1 Pitfalls
+                img(src='http://zurb.com/blog/system/images/400/original/pitfall.jpg?1334941128')
+
+            section
+                h2 Undo a finished feature
+                blockquote Let's say you add a new feature supercool-feature which you finish (merge into development and delete the feature branch) and then it goes into a release. But then your users really dislike this supercool-feature. How can I undo/rewind/reverse this feature which has been already merged into development and a release?
+                h4 Solution
+                p When you did git merge supercool-feature Git created a "merge commit" M for you. Get the Hash of this Commit and do
+                pre git revert -m 1 commit_hash
+
+            section
+                h2 Get Code from another Feature- or the Develop-Branch
+                blockquote I need this fancy stuff my collegue made yesterday!
+                h4 Solution
+                p If his feature is allready finished just rebase on to development.
+                p If it's not finished yet, do a Cherrypick
+                p
+                    a(href='https://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/') https://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/
+
+            section.end-cover
+                p &nbsp
+
+            script(src='build/build.js')

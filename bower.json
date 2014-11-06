@@ -1,0 +1,7 @@
+{
+  "name": "presentation-git-flow",
+  "version": "0.0.0",
+  "dependencies": {
+    "prism": "gh-pages"
+  }
+}
