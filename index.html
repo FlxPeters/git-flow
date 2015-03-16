@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Git-Flow</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <!--a(href='http://www.develop4edu.de/')-->
+    <!--    img(style='position: absolute; top: 25px; right: 25px; border: 0; width: 50px; background: #fff; padding: 5px;', src='/images/logo_100.png')-->
+    <article>
+      <section>
+        <h4>Your flight captain for the next couple of minutes:</h4>
+        <h2>Felix Peters</h2>
+        <p class="center">Application Developer<br> @develop4edu GmbH Stuttgart<img src="http://d4e.io/D4E-Logo-Symbol-rand_schriftzug200x200.jpg" height="50" class="d4e-logo"></p>
+        <p><small><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Images by Atlasian - Comparing Workflows</a></small></p>
+      </section>
+      <section>
+        <h2>Status Quo</h2><img src="https://s3.amazonaws.com/quietus_production/images/articles/14704/Quo_FF07_1395164202_crop_550x399.jpg">
+      </section>
+      <section>
+        <h2> Centralized Workflow</h2><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/11.svg">
+        <p>Replacement for traditional SVN Worklows</p>
+      </section>
+      <section>
+        <h2>Feature Branch Workflow</h2><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/feature-branch-workflow/01.svg">
+        <p>All feature development should take place in a dedicated branch instead of the master branch.</p>
+      </section>
+      <section>
+        <h2>Conclusion</h2><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/feature-branch-workflow/07.svg">
+        <p>By isolating features into separate branches, everybody can work independently, yet it’s still trivial to share changes with other developers when necessary.</p>
+      </section>
+      <section>
+        <h2>Result</h2><img src="images/branchHell.png">
+      </section>
+      <section>
+        <h1>Why Git-Flow?</h1><img src="/images/branches.jpg">
+      </section>
+      <section>
+        <h1>Git-Flow</h1><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/01.svg">
+        <p><a href="http://nvie.com/posts/a-successful-git-branching-model/">by Vincent Driessen at nvie</a></p>
+      </section>
+      <section><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/01.svg">
+        <ul>
+          <li>Defines a strict branching model designed around the project release</li>
+          <li>Provides a robust framework for managing larger projects.</li>
+          <li>Assigns very specific roles to different branches and defines how and when they should interact.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>How It Works</h2>
+        <p>Gitflow Workflow uses a central repository with historical Branches</p><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/02.svg">
+      </section>
+      <section>
+        <h2>Master Branch</h2>
+        <p>The master branch stores the official release history</p>
+        <p>It's convenient to tag all commits in the master branch with a version number</p><b>The Master Branch is the untouchable sanctuary! Do not touch it!!!</b><img src="http://www.funnysigns.net/files/please-keep-off-grass-400x268.jpg">
+      </section>
+      <section>
+        <h2>Develop Branch</h2>
+        <p>The Develop Branch serves as an integration branch for features</p>
+        <p>Only simple tasks happen here like fixing a typo etc.</p>
+        <p><b>Develop Branch is always stable!</b></p>
+      </section>
+      <section>
+        <h2>Feature Branches</h2><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/03.svg">
+      </section>
+      <section>
+        <h2>Feature Branches</h2>
+        <p>Each new feature should reside in its own branch</p>
+        <p>Feature Branches use <strong>develop</strong> as their parent branch.</p>
+        <p>When a feature is complete, it gets merged back into develop.</p>
+        <h4>Features should never interact directly with master!</h4>
+      </section>
+      <section>
+        <h2>Release Branches</h2><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/04.svg">
+      </section>
+      <section>
+        <h2>Release Branches</h2>
+        <p>Fork a release branch off of develop</p>
+        <p>Creating this branch starts the next release cycle</p>
+        <p><strong>No new features can be added after this point—only bug fixes!</strong></p>
+        <p>Once it's ready to ship, the release gets merged into master</p>
+        <p>Then, it should be merged back into develop</p>
+      </section>
+      <section>
+        <h2>Maintenance Branches</h2><img src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/05.svg">
+      </section>
+      <section>
+        <h2>Maintenance Branches</h2>
+        <p>Maintenance or “hotfix” branches are used to quickly patch production releases</p>
+        <p><strong>Only branch that should fork directly off of master!</strong></p>
+        <p>As soon as the fix is complete, it should be merged into both master and develop</p>
+        <p>(or the current release branch)</p>
+        <p>Hotfix-Branches are tiny Releases and they are tagged with a version number</p>
+      </section>
+      <section>
+        <h2> Naming conventions</h2>
+        <p><strong>master</strong></p>
+        <p><strong>develop</strong></p>
+        <p><strong>feature</strong>/SU-140-nutzerschlussel-umleiten</p>
+        <p><strong>release</strong>/1.2.1</p>
+        <p><strong>hotfix</strong>/(SU-140-)dont-panik</p>
+      </section>
+      <section><img src="/images/sourceTree.png"></section>
+      <section>
+        <h2>Tools</h2>
+        <p>gitflow - base tool for Git Flow Workflow</p><a href="https://github.com/nvie/gitflow">https://github.com/nvie/gitflow</a>
+        <p>git-up - Update all your branches in one step</p><a href="https://github.com/aanand/git-up">https://github.com/aanand/git-up</a>
+        <p>JIRA - Supports Feature Branches with Stash</p>
+      </section>
+      <section>
+        <h1>Pitfalls</h1><img src="http://zurb.com/blog/system/images/400/original/pitfall.jpg?1334941128">
+      </section>
+      <section>
+        <h2>Undo a finished feature</h2>
+        <blockquote>Let's say you add a new feature supercool-feature which you finish (merge into development and delete the feature branch) and then it goes into a release. But then your users really dislike this supercool-feature. How can I undo/rewind/reverse this feature which has been already merged into development and a release?</blockquote>
+        <h4>Solution</h4>
+        <p>When you did git merge supercool-feature Git created a "merge commit" M for you. Get the Hash of this Commit and do</p>
+        <pre>git revert -m 1 commit_hash</pre>
+      </section>
+      <section>
+        <h2>Get Code from another Feature- or the Develop-Branch</h2>
+        <blockquote>I need this fancy stuff my collegue made yesterday!</blockquote>
+        <h4>Solution</h4>
+        <p>If his feature is allready finished just rebase on to development.</p>
+        <p>If it's not finished yet, do a Cherrypick</p>
+        <p><a href="https://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/">https://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/</a></p>
+      </section>
+      <section class="end-cover">
+        <p>&nbsp</p>
+      </section>
+      <section>
+        <h2>Links & Credits</h2>
+        <p><a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow</a></p>
+        <p><a href="https://github.com/nvie/gitflow">https://github.com/nvie/gitflow</a></p>
+        <p><a href="http://nvie.com/posts/a-successful-git-branching-model/">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
+        <p><a href="http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/">http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/</a></p>
+        <p><a href="http://buildamodule.com/video/change-management-and-version-control-deploying-releases-features-and-fixes-with-git-how-to-use-a-scalable-git-branching-model-called-gitflow#viewing">http://buildamodule.com/video/change-management-and-version-control-deploying-releases-features-and-fixes-with-git-how-to-use-a-scalable-git-branching-model-called-gitflow#viewing</a></p>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
