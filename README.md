@@ -1,7 +1,7 @@
 # Git-Flow
 > A [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) presentation, built with [generator-bespoke](https://github.com/markdalgleish/generator-bespoke)
 
-## View slides locally
+## View slides local
 
 First, ensure you have the following installed:
 
